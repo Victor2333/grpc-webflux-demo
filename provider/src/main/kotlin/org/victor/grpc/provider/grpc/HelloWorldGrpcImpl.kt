@@ -1,16 +1,37 @@
 package org.victor.grpc.provider.grpc
 
-import io.grpc.examples.helloworld.HelloReply
-import io.grpc.examples.helloworld.HelloRequest
-import io.grpc.examples.helloworld.ReactorGreeterGrpc
 import net.devh.boot.grpc.server.service.GrpcService
+import org.slf4j.LoggerFactory
+import org.victor.grpc.api.hello.HelloRequest
+import org.victor.grpc.api.hello.HelloResponse
+import org.victor.grpc.api.hello.ReactorGreeterGrpc
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import reactor.kotlin.core.publisher.toFlux
 
 @GrpcService
 class HelloWorldService : ReactorGreeterGrpc.GreeterImplBase() {
-    override fun sayHello(request: Mono<HelloRequest>?): Mono<HelloReply> {
-        return request?.map {
-            HelloReply.newBuilder().setMessage(it.name).build()
-        } ?: Mono.empty()
+
+    private val logger = LoggerFactory.getLogger(HelloWorldService::class.java)
+
+    override fun greet(request: Mono<HelloRequest>?): Mono<HelloResponse> {
+        logger.info("greet")
+        return request?.map { HelloResponse.newBuilder().setMessage("Hi, ${it.name}").build() } ?: Mono.empty()
     }
+
+    override fun multiGreet(request: Mono<HelloRequest>?): Flux<HelloResponse> {
+        logger.info("multiple greet")
+        return request
+            ?.map { HelloResponse.newBuilder().setMessage("Hi, ${it.name}").build() }
+            ?.toFlux()
+            ?: Flux.empty()
+    }
+
+    override fun streamGreet(request: Flux<HelloRequest>?): Flux<HelloResponse> {
+        logger.info("stream greet")
+        return request
+            ?.map { HelloResponse.newBuilder().setMessage("Hi, ${it.name}").build() }
+            ?: Flux.empty()
+    }
+
 }
