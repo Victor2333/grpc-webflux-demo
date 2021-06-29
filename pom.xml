@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.victor</groupId>
+    <groupId>org.victor</groupId>
     <artifactId>grpc-webflux-demo</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
@@ -10,13 +10,17 @@
         <module>provider</module>
         <module>interface</module>
         <module>consumer</module>
+        <module>eureka</module>
+        <module>config-service</module>
+        <module>spring-pom</module>
+        <module>spring-resource-pom</module>
     </modules>
     <name>grpc-webflux-demo</name>
     <description>Demo for GRPC</description>
     <properties>
-        <java.version>16</java.version>
+        <java.version>14</java.version>
         <kotlin.version>1.5.20</kotlin.version>
-        <spring.version>2.5.2</spring.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <grpc.version>1.38.1</grpc.version>
         <grpc-kotlin.version>1.1.0</grpc-kotlin.version>
         <google-protobuf.version>3.17.3</google-protobuf.version>
@@ -26,16 +30,26 @@
         <reactor-grpc.version>1.0.1</reactor-grpc.version>
         <reactor-core.version>3.4.7</reactor-core.version>
         <guava.version>30.1.1-jre</guava.version>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <spring-cloud.version>Hoxton.SR11</spring-cloud.version>
+        <kotlin-extensions.version>1.1.3</kotlin-extensions.version>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
     </properties>
+
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring.version}</version>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -94,6 +108,36 @@
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-client-spring-boot-starter</artifactId>
                 <version>${net-devh-grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core</artifactId>
+                <version>${kotlinx.coroutines.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor.kotlin</groupId>
+                <artifactId>reactor-kotlin-extensions</artifactId>
+                <version>${kotlin-extensions.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-reactor</artifactId>
+                <version>${kotlinx.coroutines.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
