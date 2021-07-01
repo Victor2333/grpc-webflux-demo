@@ -1,9 +1,9 @@
 package org.victor.grpc.consumer
 
-import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.victor.anno.VictorSpringBootStarter
 
-@SpringBootApplication
+@VictorSpringBootStarter
 class Starter
 
 fun main(args: Array<String>) {

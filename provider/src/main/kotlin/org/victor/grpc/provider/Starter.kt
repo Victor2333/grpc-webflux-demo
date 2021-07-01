@@ -1,10 +1,10 @@
 package org.victor.grpc.provider
 
 import org.springframework.boot.WebApplicationType
-import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.builder.SpringApplicationBuilder
+import org.victor.anno.VictorSpringBootStarter
 
-@SpringBootApplication
+@VictorSpringBootStarter
 class Starter
 
 fun main(args: Array<String>) {

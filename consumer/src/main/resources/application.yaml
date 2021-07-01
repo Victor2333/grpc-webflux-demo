@@ -1,6 +1,6 @@
 spring:
   application:
-    name: grpc-provider
+    name: grpc-consumer
   cloud:
     config:
       fail-fast: true
@@ -11,3 +11,7 @@ spring:
         discovery:
           enabled: true
           service-id: config-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
