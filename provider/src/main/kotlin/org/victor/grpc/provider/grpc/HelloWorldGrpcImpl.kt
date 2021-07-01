@@ -1,6 +1,6 @@
 package org.victor.grpc.provider.grpc
 
-import net.devh.boot.grpc.server.service.GrpcService
+import org.lognet.springboot.grpc.GRpcService
 import org.slf4j.LoggerFactory
 import org.victor.grpc.api.hello.HelloRequest
 import org.victor.grpc.api.hello.HelloResponse
@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toFlux
 
-@GrpcService
+@GRpcService
 class HelloWorldService : ReactorGreeterGrpc.GreeterImplBase() {
 
     private val logger = LoggerFactory.getLogger(HelloWorldService::class.java)
