@@ -7,15 +7,8 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>provider</module>
         <module>interface</module>
-        <module>consumer</module>
-        <module>eureka</module>
-        <module>config-service</module>
         <module>spring-pom</module>
-        <module>spring-resource-pom</module>
-        <module>gateway</module>
-        <module>admin</module>
         <module>common</module>
     </modules>
     <name>grpc-webflux-demo</name>

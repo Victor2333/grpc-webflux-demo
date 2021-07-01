@@ -6,7 +6,6 @@
         <groupId>org.victor</groupId>
         <artifactId>spring-resource-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../spring-resource-pom/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

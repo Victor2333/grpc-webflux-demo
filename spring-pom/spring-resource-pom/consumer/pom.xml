@@ -6,25 +6,32 @@
         <artifactId>spring-resource-pom</artifactId>
         <groupId>org.victor</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../spring-resource-pom/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>admin</artifactId>
+    <artifactId>consumer</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.salesforce.servicelibs</groupId>
+            <artifactId>reactor-grpc-stub</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.victor</groupId>
+            <artifactId>interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <testSourceDirectory>src/test/kotlin</testSourceDirectory>
     </build>
-
 </project>
