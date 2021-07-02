@@ -14,8 +14,7 @@ import kotlin.collections.ArrayList
 @SpringBootApplication
 class Starter
 
-
-const val API_ENDPOINT = "/v2/api-docs"
+const val API_ENDPOINT = "/v3/api-docs"
 
 @Primary
 @Configuration
@@ -26,7 +25,7 @@ class SwaggerResourceConfiguration(val routeLocator: RouteLocator) : SwaggerReso
             val swaggerResource = SwaggerResource()
             swaggerResource.name = it.id
             swaggerResource.url = "/${it.uri.host.lowercase()}${API_ENDPOINT}"
-            swaggerResource.swaggerVersion = "2.0"
+            swaggerResource.swaggerVersion = "3.0"
             swaggerResourceList.add(swaggerResource)
         }
         return swaggerResourceList

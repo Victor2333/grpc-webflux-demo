@@ -1,7 +1,11 @@
-server:
-  port: 8761
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+spring:
+  application:
+    name: eureka
+  cloud:
+    config:
+      fail-fast: true
+      uri: ${CONFIG_REPO_HOST:http://localhost:8888}
+      retry:
+        max-attempts: 20
+        max-interval: 15000
+        initial-interval: 10000

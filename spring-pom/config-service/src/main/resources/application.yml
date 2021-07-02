@@ -7,8 +7,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Victor2333/config-repo
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+          uri: file://${user.home}/config-repo
