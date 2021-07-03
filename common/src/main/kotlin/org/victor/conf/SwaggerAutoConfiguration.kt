@@ -17,9 +17,6 @@ import java.net.URI
 @EnableOpenApi
 class SwaggerAutoConfiguration {
 
-    @Value("\${spring.application.name}")
-    lateinit var appName: String
-
     @Value("\${gateway.service.uri}")
     lateinit var gatewayUri: URI
 
@@ -32,6 +29,5 @@ class SwaggerAutoConfiguration {
             .paths(PathSelectors.any())
             .build()
             .host("${gatewayUri.host}:${gatewayUri.port}")
-            .pathMapping("/${appName}")
     }
 }
