@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>org.victor</groupId>
-            <artifactId>interface</artifactId>
+            <artifactId>hello</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
