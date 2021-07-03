@@ -1,10 +1,10 @@
 HELP.md
+jars/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 !.gitkeep
-**/*/jars
 
 ### STS ###
 .apt_generated
