@@ -33,6 +33,8 @@
         <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+        <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
 
         <!-- language feature -->
         <java.version>14</java.version>
@@ -316,6 +318,27 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
+                    <configuration>
+                        <filesets>
+                            <fileset>
+                                <directory>jars</directory>
+                                <includes>
+                                    <include>**</include>
+                                </includes>
+                            </fileset>
+                        </filesets>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
