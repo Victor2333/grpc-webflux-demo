@@ -5,7 +5,7 @@
     <groupId>org.victor</groupId>
     <artifactId>grpc-webflux-demo</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <modules>
         <module>interface</module>
         <module>spring-pom</module>
@@ -14,6 +14,7 @@
     <name>grpc-webflux-demo</name>
     <description>Demo for GRPC</description>
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <springfox.version>3.0.0</springfox.version>
         <grpc.version>1.39.0</grpc.version>

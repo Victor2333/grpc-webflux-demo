@@ -9,6 +9,6 @@
 ## How to use
 ```bash
 mvn clean package
-java -jar provider/target/provider-0.0.1-SNAPSHOT.jar
-java -jar consumer/target/consumer-0.0.1-SNAPSHOT.jar
+java -jar provider/target/provider-${revision}.jar
+java -jar consumer/target/consumer-${revision}.jar
 ```

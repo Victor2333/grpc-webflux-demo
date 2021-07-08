@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.victor</groupId>
         <artifactId>spring-resource-pom</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.victor</groupId>
             <artifactId>hello</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${revision}</version>
             <scope>compile</scope>
             <exclusions>
                 <exclusion>
